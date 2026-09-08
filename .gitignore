@@ -1,0 +1,32 @@
+# Dependencies
+**/node_modules/
+**/.venv/
+**/__pycache__/
+*.pyc
+
+# Build outputs
+**/.next/
+**/out/
+**/build/
+**/.vercel/
+
+# Database & runtime data
+**/signal.db
+**/uploads/
+
+# Env & local config
+.env*
+**/.env*
+*.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.pem
+
+# TS build info
+*.tsbuildinfo
+next-env.d.ts
+
+# Upstream reference (Signal Desktop source clone — not part of this project)
+/Signal-Desktop/
