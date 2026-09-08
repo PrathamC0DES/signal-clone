@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --signal-blue: #2c6bed;
+  --signal-blue-hover: #255dd1;
+  color-scheme: light;
+}
+
+html, body, input, textarea, button, select {
+  font-family: 'Segoe UI', Arial, sans-serif !important;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+/* Custom Signal Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #333333;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaaaaa;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #4a4a4a;
+}
+
+/* Signal Typing Animation (exact Signal Desktop keyframes & timing) */
+@keyframes signal-typing-bare {
+  0%, 40%, 100% {
+    opacity: 0.35;
+  }
+  20% {
+    opacity: 1;
+  }
+}
+
+@keyframes signal-typing-bubble {
+  0%, 40%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.28);
+  }
+}
+
+.signal-typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  opacity: 0.35;
+  will-change: opacity;
+  animation: signal-typing-bare 1400ms ease infinite;
+}
+
+.signal-typing-dot-bubble {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #555555;
+  opacity: 0.35;
+  will-change: transform, opacity;
+  animation: signal-typing-bubble 1400ms ease infinite;
+}
+
+.dark .signal-typing-dot-bubble {
+  background-color: #ffffff;
+}
+
+.signal-typing-dot:nth-child(1),
+.signal-typing-dot-bubble:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.signal-typing-dot:nth-child(2),
+.signal-typing-dot-bubble:nth-child(2) {
+  animation-delay: 160ms;
+}
+
+.signal-typing-dot:nth-child(3),
+.signal-typing-dot-bubble:nth-child(3) {
+  animation-delay: 320ms;
+}
+
